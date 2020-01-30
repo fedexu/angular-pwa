@@ -1,0 +1,42 @@
+.grid-footer {
+    display: grid;
+    grid-template-columns: [first] 33% [second] 33% [third] 33% [fourth];
+    grid-template-rows: [first] auto [second];
+    min-height: 100%;
+}
+
+.favorite {
+    grid-column: first / second;
+    grid-row: first / second;
+}
+
+.home {
+    grid-column: second / third;
+    grid-row: first / second;
+}
+
+.view {
+    grid-column: third / fourth;
+    grid-row: first / second;
+}
+
+.icon-grid{
+    display: grid;
+    grid-template-columns: [first] 33% [second] 33% [third] 33% [fourth];
+    grid-template-rows: [first] 33% [second] 33% [third] 33% [fourth];
+    min-height: 100%;
+}
+
+.icon-center{
+    grid-column: second / third;
+    grid-row: second / third;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.mdl-js-button.mdl-js-ripple-effect { position: relative; }
+
+@media only screen and (min-width: 768px) {
+
+}
