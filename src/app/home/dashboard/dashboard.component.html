@@ -1,0 +1,5 @@
+<infinite-scroll  class="scrollBarLayout" (scrolled)="onReachEnd()">
+    <ng-container *ngFor="let item of items">
+        <div>{{item.html}}</div>
+    </ng-container>
+</infinite-scroll>

@@ -1,0 +1,19 @@
+.loader-overlay-grid {
+    display: grid;
+    grid-template-columns: [first] 23vw [second] 33vw [third] 44vw [fourth];
+    grid-template-rows: [first] 33vh [second] 33vh [third] 33vh [fourth];
+    position: absolute;
+    z-index: 1000000;
+}
+
+.loader-item {
+    grid-column: second / third;
+    grid-row: second / third;
+}
+
+@media only screen and (min-width: 768px) {
+    .loader-overlay-grid {
+        grid-template-columns: [first] 38vw [second] 33vw [third] 42vw [fourth];
+        grid-template-rows: [first] 38vh [second] 33vh [third] 33vh [fourth];
+    }
+}

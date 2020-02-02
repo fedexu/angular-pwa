@@ -7,15 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FooterMenuComponent implements OnInit {
 
-  @Output() clickTabEvent = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  clicked(idTabClicked: string) {
-    this.clickTabEvent.emit({ idTabClicked });
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService, Item } from './api.service';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +8,10 @@ import { ApiService, Item } from './api.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'angular-pwa';
-  items: Array<Item>;
+  constructor(
+    private readonly apiService: ApiService
+  ) { }
 
-  constructor(private readonly apiService: ApiService) { }
-
-  ngOnInit() {
-    this.getData();
-  }
-
-  getData() {
-    this.apiService.getData().subscribe((data: Array<Item>) => {
-      this.items = data;
-    }, error => { console.error(error); });
-  }
-
-  showView($event) {
-    console.log($event);
-  }
+  ngOnInit() { }
 
 }
