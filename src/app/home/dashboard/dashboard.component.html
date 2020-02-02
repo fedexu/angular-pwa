@@ -1,5 +1,9 @@
-<infinite-scroll  class="scrollBarLayout" (scrolled)="onReachEnd()">
+<infinite-scroll class="scrollBarLayout" (scrolled)="onReachEnd()" [rowHeight]="rowHeight" [colNum]="colNum" [gap]="'5px'" [elementsNumber]="items.length"> 
     <ng-container *ngFor="let item of items">
-        <div>{{item.html}}</div>
+        <infinite-scroll-grid-item>
+            <div class="card-container">
+                <card></card>
+            </div>
+        </infinite-scroll-grid-item>
     </ng-container>
 </infinite-scroll>

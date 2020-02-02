@@ -9,12 +9,30 @@ import { Item, HomeApiService } from '../home-api.service';
 export class DashboardComponent implements OnInit {
 
   items = new Array<Item>();
+  colNum = 1;
+  rowHeight = '0vh';
 
   constructor(
     private readonly homeApiService: HomeApiService
   ) { }
 
-  ngOnInit() {  }
+  ngOnInit() {
+    const th = this;
+    window.addEventListener("resize", resize);
+    function resize(){
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        //desktop size
+        th.colNum = 4;
+        th.rowHeight = '30vh';
+      } else {
+        th.colNum = 1;
+        th.rowHeight = '30vh';
+      }
+    }
+    resize();
+  }
+
+  
 
   fetchData() {
     this.homeApiService.getData().subscribe((data: Array<Item>) => {
@@ -22,7 +40,7 @@ export class DashboardComponent implements OnInit {
     }, error => { console.error(error); });
   }
 
-  onReachEnd(){
+  onReachEnd() {
     this.fetchData();
   }
 

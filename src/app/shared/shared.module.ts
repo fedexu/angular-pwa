@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './card/card.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { LoaderComponent } from './loader/loader.component';
+import { InfiniteScrollGridItemComponent } from './infinite-scroll/infinite-scroll-grid-item/infinite-scroll-grid-item.component';
 
 @NgModule({
   declarations: [
     FooterMenuComponent,
     CardComponent,
     InfiniteScrollComponent,
-    LoaderComponent
+    LoaderComponent,
+    InfiniteScrollGridItemComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { LoaderComponent } from './loader/loader.component';
     FooterMenuComponent,
     CardComponent,
     InfiniteScrollComponent,
-    LoaderComponent
+    LoaderComponent,
+    InfiniteScrollGridItemComponent
   ]
 })
 export class SharedModule { }
