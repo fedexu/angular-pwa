@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "publish-github": "ng build --prod --output-path docs --base-href /angular-pwa/",
-    "test-pwa": "ng build --prod --output-path docs && cd ./docs && http-server -p 4000 -o"
+    "test-pwa": "ng build --prod --output-path angular-pwa/ --base-href /angular-pwa/ && http-server -p 4000 -o ./angular-pwa"
   },
   "private": true,
   "dependencies": {
