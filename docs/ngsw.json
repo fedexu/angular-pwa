@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1580727633706,
+  "timestamp": 1580727823577,
   "index": "/angular-pwa/index.html",
   "assetGroups": [
     {
@@ -64,7 +64,7 @@
     "/angular-pwa/index.html": "74e55a2cf8d7f58b5248070c4d68bd0404b0417f",
     "/angular-pwa/main-es2015.6e8b6f1d6f1b8aafb08f.js": "2c9b22eb0d7f7214e95e408179f0b1dc091eb5d6",
     "/angular-pwa/main-es5.6e8b6f1d6f1b8aafb08f.js": "db3ae9f9f4e29fdf4af070423d0fd4b6047126fb",
-    "/angular-pwa/manifest.webmanifest": "4e22b688e6869f95f3ee8f575b8c8b5a2363d496",
+    "/angular-pwa/manifest.webmanifest": "39292d26a9b0943922a522b331d9ba3ca2180bd5",
     "/angular-pwa/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/angular-pwa/polyfills-es5.6696c533341b95a3d617.js": "6bff0c03e05bb347d213ad1b3674045eb892d189",
     "/angular-pwa/runtime-es2015.add382b5722401c2a34b.js": "f4f0834e2ceed52b041caecd949b11b2bff61e6a",
