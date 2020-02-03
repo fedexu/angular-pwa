@@ -16,7 +16,9 @@
     gap: var(--gap);
 }
 
-infinite-scroll-grid-item {
+.infinite-scroll-grid >>> infinite-scroll-grid-item {
     grid-column-start: auto;
     grid-row-start: auto;
+    max-height: var(--rowHeight);
+    min-height: var(--rowHeight);
 }
