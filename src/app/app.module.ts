@@ -17,7 +17,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule, 
     SharedModule, 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {
