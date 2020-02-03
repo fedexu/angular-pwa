@@ -7,8 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e", 
-    "publish-github": "ng build --prod --output-path docs --base-href /angular-pwa/"
+    "e2e": "ng e2e",
+    "publish-github": "ng build --prod --output-path docs --base-href /angular-pwa/",
+    "test-pwa": "ng build --prod --output-path docs && cd ./docs && http-server -p 4000 -o"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +20,9 @@
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/pwa": "^0.803.24",
     "@angular/router": "~8.2.14",
+    "@angular/service-worker": "~8.2.14",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
