@@ -2,7 +2,7 @@
 .grid-container {
     display: grid;
     grid-template-columns: [first] 100vw [second];
-    grid-template-rows: [first] 90vh [second] 10vh [third];
+    grid-template-rows: [first] auto [second] 10vh [third];
 }
 
 .footer-item {
@@ -36,7 +36,7 @@
     /* For desktop: */
     .grid-container {
         grid-template-columns: [first] 15vw [second] 15vw [third] 15vw [fourth] 55vw [fifth];
-        grid-template-rows: [first] 8vh  [second] 92vh [third];
+        grid-template-rows: [first] 6vh  [second] 94vh [third];
     }
 
     .footer-item {
@@ -55,7 +55,7 @@
     }
 
     .main-item >>> infinite-scroll {
-        max-height: 92vh;
+        max-height: 94vh;
         max-width: 100vw;
         overflow-y: scroll;
         overflow-x: hidden;
