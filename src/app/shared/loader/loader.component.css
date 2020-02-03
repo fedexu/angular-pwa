@@ -17,3 +17,11 @@
         grid-template-rows: [first] 38vh [second] 33vh [third] 33vh [fourth];
     }
 }
+
+#no-internet-toast {
+    z-index: 100;
+}
+
+.mdl-snackbar__text {
+    margin: auto;
+}

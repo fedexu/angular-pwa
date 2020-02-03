@@ -29,4 +29,7 @@ export class LoaderInterceptorService implements HttpInterceptor {
   private hideLoader(): void {
     this.loaderService.hide();
   }
+  private showConnectionError(){
+    this.loaderService.error();
+  }
 }

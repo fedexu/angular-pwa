@@ -3,15 +3,17 @@
     width: 0em;
     border-radius: 1em;
 }
+
 .scrollBarLayout::-webkit-scrollbar-track {
     background-color: transparent;
 }
+
 .scrollBarLayout::-webkit-scrollbar-thumb {
     /* slim scroll bar */
     background-color: darkgrey;
     outline: 1px solid slategrey;
 }
 
-.card-container{
+.card-container {
     padding: 1em;
 }
