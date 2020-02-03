@@ -20,16 +20,21 @@
     min-height: 100%;
 }
 
-.card-title{
+.card-title {
     grid-column: first / second;
     grid-row: first / second;
 }
-.card-description{
+
+.card-description {
     grid-column: first / second;
     grid-row: second / third;
 }
 
-.card-button{
+.card-button {
     grid-column: first / second;
     grid-row: third / fourth;
+}
+
+.mdl-button--icon {
+    padding: 0.15em;
 }
