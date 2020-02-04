@@ -58,8 +58,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  addToFavorites($event: { item: Item, favorite: boolean }) {
-    ($event.favorite) ? this.favoritesDataService.addItem($event.item) : this.favoritesDataService.removeItem($event.item);
+  addToFavorites($event: Item) {
+    ($event.favorite) ? this.favoritesDataService.addItem($event) : this.favoritesDataService.removeItem($event);
   }
 
   isInFavorites(item: Item): boolean {

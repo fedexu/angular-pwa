@@ -6,7 +6,7 @@
     <div class="shadow-boxed"></div>
 </div>
 <div class="grid-container">
-    <div class="main-item">
-        <router-outlet></router-outlet>
+    <div [@zoomIn]="animation(outlet)" class="main-item">
+        <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>

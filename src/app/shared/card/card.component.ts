@@ -9,17 +9,15 @@ import { Item } from '../services/favorites-data.service';
 export class CardComponent implements OnInit {
 
   @Input() item: Item;
-  @Input() iconFilled: boolean;
   @Output() iconClicked = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {  }
 
   onIconClick() {
-    this.iconFilled = !Boolean(this.iconFilled);
-    this.iconClicked.emit({item: this.item , favorite: this.iconFilled});
+    this.item.favorite = !Boolean(this.item.favorite);
+    this.iconClicked.emit(this.item);
   }
 
 }

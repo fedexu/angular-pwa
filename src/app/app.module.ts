@@ -8,6 +8,7 @@ import { LoaderInterceptorService } from './shared/loader/loader-interceptor.ser
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { StorageModule } from '@ngx-pwa/local-storage';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { StorageModule } from '@ngx-pwa/local-storage';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule, 
     SharedModule, 

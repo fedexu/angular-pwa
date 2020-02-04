@@ -41,8 +41,10 @@ export class FavoritesDataService {
   }
 
   removeItem(item: Item) {
-    this.items.splice(this.items.indexOf(item), 1);
-    this.alignStorage();
+    if (this.isInFavorites(item)) {
+      this.items.splice(this.items.indexOf(item), 1);
+      this.alignStorage();
+    }
   }
 
   isInFavorites(item: Item): boolean {
@@ -53,7 +55,9 @@ export class FavoritesDataService {
   }
 
   alignStorage() {
-    this.localStorage.setItem(this.dbEntity, this.items).subscribe(() => { });
+    this.localStorage.setItem(this.dbEntity, this.items).subscribe(() => {
+      this.eventItems.next(this.items);
+    });
   }
 
 }

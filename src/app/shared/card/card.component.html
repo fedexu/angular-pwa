@@ -13,8 +13,8 @@
         </div>
         <div class="mdl-card__menu">
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" (click)="onIconClick()">
-                <i *ngIf="!iconFilled" class="material-icons-round"> favorite_border </i>
-                <i *ngIf="iconFilled" class="material-icons-round icon-center">favorite</i>
+                <i *ngIf="!item.favorite" class="material-icons-round">favorite_border </i>
+                <i *ngIf="item.favorite" class="material-icons-round icon-center">favorite</i>
             </button>
         </div>
     </div>

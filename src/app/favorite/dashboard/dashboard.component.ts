@@ -2,11 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Item, FavoritesDataService } from 'src/app/shared/services/favorites-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { fadeOutAnimation } from 'animation-lib';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [
+    fadeOutAnimation()
+  ]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
@@ -24,7 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.favoritesDataService.getItems().pipe(takeUntil(this.ngUnsubscribe)).subscribe((items: Array<Item>) => {
       this.items = items;
     });
-    
+
     const th = this;
     window.addEventListener("resize", resize);
     function resize() {
@@ -48,7 +52,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   removeToFavorites($event) {
-    this.favoritesDataService.removeItem($event.item);
+    // Need to check because Angular fire envent of animation even before the element loads
+    if (!$event.favorite) {
+      this.favoritesDataService.removeItem($event);
+    }
   }
+
 
 }
