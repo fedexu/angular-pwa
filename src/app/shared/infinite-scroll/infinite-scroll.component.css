@@ -3,9 +3,9 @@
 }
 
 .variables {
-    --rowNum: 1;
-    --colNum: 1;
-    --rowHeight: 176px;
+    --rowNum: 0;
+    --colNum: 0;
+    --rowHeight: 0px;
     --gap: 0px;
 }
 

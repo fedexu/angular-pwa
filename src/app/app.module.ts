@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { LoaderInterceptorService } from './shared/loader/loader-interceptor.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { StorageModule } from '@ngx-pwa/local-storage';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule, 
     SharedModule, 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), StorageModule.forRoot({ IDBNoWrap: true })
   ],
   providers: [
     {

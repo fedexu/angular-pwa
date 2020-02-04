@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FavoriteComponent } from './favorite.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TestComponent } from './test/test.component';
 import { FavoriteRoutingModule } from './favorite-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [FavoriteComponent, TestComponent],
+  declarations: [FavoriteComponent, DashboardComponent],
   imports: [
     CommonModule, 
-    FavoriteRoutingModule
+    FavoriteRoutingModule,
+    SharedModule
   ],
   providers: [HttpClientModule]
 })

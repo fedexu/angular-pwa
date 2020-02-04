@@ -2,7 +2,7 @@
     [gap]="'1em'" [elementsNumber]="items.length">
     <ng-container *ngFor="let item of items">
         <infinite-scroll-grid-item>
-            <card [item]="item"></card>
+            <card [item]="item" (iconClicked)="addToFavorites($event)" [iconFilled]="item.favorite"></card>
         </infinite-scroll-grid-item>
     </ng-container>
 </infinite-scroll>

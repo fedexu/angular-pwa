@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Item } from '../shared/services/favorites-data.service';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +21,3 @@ export class HomeApiService {
 
 }
 
-export interface Item {
-  name: string;
-  description: string;
-  url: string;
-  html: string;
-  markdown: string;
-}

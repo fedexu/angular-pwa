@@ -1,0 +1,12 @@
+<infinite-scroll class="scrollBarLayout" [rowHeight]="rowHeight" [colNum]="colNum"
+    [gap]="'1em'" [elementsNumber]="items.length">
+    <ng-container *ngFor="let item of items">
+        <infinite-scroll-grid-item>
+            <card [item]="item" [iconFilled]="item.favorite" (iconClicked)="removeToFavorites($event)"></card>
+        </infinite-scroll-grid-item>
+    </ng-container>
+</infinite-scroll>
+
+<ng-container *ngIf="items.length == 0">
+    <div class="no-article"> You don't have any favorites article!</div>
+</ng-container>

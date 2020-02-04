@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'src/app/home/home-api.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Item } from '../services/favorites-data.service';
 
 @Component({
   selector: 'card',
@@ -9,10 +9,17 @@ import { Item } from 'src/app/home/home-api.service';
 export class CardComponent implements OnInit {
 
   @Input() item: Item;
+  @Input() iconFilled: boolean;
+  @Output() iconClicked = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onIconClick() {
+    this.iconFilled = !Boolean(this.iconFilled);
+    this.iconClicked.emit({item: this.item , favorite: this.iconFilled});
   }
 
 }

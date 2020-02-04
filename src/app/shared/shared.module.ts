@@ -6,6 +6,7 @@ import { CardComponent } from './card/card.component';
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component';
 import { LoaderComponent } from './loader/loader.component';
 import { InfiniteScrollGridItemComponent } from './infinite-scroll/infinite-scroll-grid-item/infinite-scroll-grid-item.component';
+import { BottomUpPageContainerComponent } from './bottom-up-page-container/bottom-up-page-container.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { InfiniteScrollGridItemComponent } from './infinite-scroll/infinite-scro
     CardComponent,
     InfiniteScrollComponent,
     LoaderComponent,
-    InfiniteScrollGridItemComponent
+    InfiniteScrollGridItemComponent,
+    BottomUpPageContainerComponent
   ],
   imports: [
     CommonModule,
