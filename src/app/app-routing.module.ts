@@ -5,7 +5,7 @@ import { BottomUpPageContainerComponent } from './shared/bottom-up-page-containe
 
 const routes: Routes = [
   { path:'', loadChildren: './home/home.module#HomeModule'},
-  { path:'favorite', loadChildren: './favorite/favorite.module#FavoriteModule' , data: {animation: 'favorite'}},
+  { path:'favorite', loadChildren: './favorite/favorite.module#FavoriteModule' , data: {animation: 'FavoritesPage'}},
   { path:'bottom-up-Page',component: BottomUpPageContainerComponent}
 ];
 

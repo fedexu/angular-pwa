@@ -1,12 +1,14 @@
-<loader></loader>
 <div class="menu-grid">
     <div class="footer-item">
         <footer-menu></footer-menu>
     </div>
     <div class="shadow-boxed"></div>
 </div>
-<div class="grid-container">
-    <div [@zoomIn]="animation(outlet)" class="main-item">
-        <router-outlet #outlet="outlet"></router-outlet>
+<div [@fadeAnimation]="animation(outlet)">
+    <div class="main-item">
+        <div class="grid-container">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </div>
     </div>
+    <loader></loader>
 </div>

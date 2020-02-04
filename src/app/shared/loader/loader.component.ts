@@ -1,11 +1,16 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoaderService, LoaderState } from './loader.service';
+import { flipOutYOnLeaveAnimation, flipInXOnEnterAnimation } from 'animation-lib';
 
 @Component({
   selector: 'loader',
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css']
+  styleUrls: ['./loader.component.css'],
+  animations: [
+    flipOutYOnLeaveAnimation(),
+    flipInXOnEnterAnimation()
+  ]
 })
 export class LoaderComponent implements OnInit, AfterViewInit {
 
@@ -15,18 +20,18 @@ export class LoaderComponent implements OnInit, AfterViewInit {
   private subscription: Subscription;
 
   constructor(private loaderService: LoaderService) { }
-  
+
   ngOnInit() {
     this.subscription = this.loaderService.loaderState
       .subscribe((state: LoaderState) => {
         this.show = state.show;
-        if (state.error){
-          this.noInternetToast.MaterialSnackbar.showSnackbar({message: '¯\_(ツ)_/¯ No internet connection!' });
+        if (state.error) {
+          this.noInternetToast.MaterialSnackbar.showSnackbar({ message: '¯\_(ツ)_/¯ No internet connection!' });
         }
       });
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.noInternetToast = document.querySelector('#no-internet-toast');
   }
 

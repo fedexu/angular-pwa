@@ -3,6 +3,7 @@
     grid-template-columns: [first] 23vw [second] 33vw [third] 44vw [fourth];
     grid-template-rows: [first] 33vh [second] 33vh [third] 33vh [fourth];
     position: absolute;
+    top: 0%;
 }
 
 .loader-item {
