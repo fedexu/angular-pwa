@@ -1,8 +1,8 @@
 {
-  "name": "angular-pwa",
-  "short_name": "angular-pwa",
-  "theme_color": "#3367D6",
-  "background_color": "#3367D6",
+  "name": "Angular PWA",
+  "short_name": "Angular PWA",
+  "theme_color": "#F2AA0F",
+  "background_color": "#F2AA0F",
   "display": "standalone",
   "scope": "https://fedexu.github.io/angular-pwa/",
   "start_url": "https://fedexu.github.io/angular-pwa/",
