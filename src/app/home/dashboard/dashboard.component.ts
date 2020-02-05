@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { HomeApiService } from '../home-api.service';
 import { Item, FavoritesDataService } from 'src/app/shared/services/favorites-data.service';
-import { Subscription, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -9,12 +9,13 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
   items = new Array<Item>();
   colNum = 1;
   rowHeight = '0vh';
-  
+  showPage = false;
+
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(
@@ -38,8 +39,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
     resize();
   }
 
+  ngAfterViewInit() {
+    this.showPage = true;
+  }
+
+  ngOnDestroy() {
+    // This aborts all HTTP requests.
+    this.ngUnsubscribe.next();
+    // This completes the subject properlly.
+    this.ngUnsubscribe.complete();
+  }
+
+
   fetchData() {
-    this.homeApiService.getData().pipe( takeUntil(this.ngUnsubscribe) ).subscribe((data: Array<Item>) => {
+    this.homeApiService.getData().pipe(takeUntil(this.ngUnsubscribe)).subscribe((data: Array<Item>) => {
       this.items = [...this.items, ...data];
       this.items.forEach((item: Item) => {
         item.favorite = this.isInFavorites(item);
@@ -48,14 +61,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   onReachEnd() {
-    this.fetchData();
-  }
-
-  ngOnDestroy() {
-    // This aborts all HTTP requests.
-    this.ngUnsubscribe.next();
-    // This completes the subject properlly.
-    this.ngUnsubscribe.complete();
+    if (Boolean(this.showPage)) {
+      this.fetchData();
+    }
   }
 
   addToFavorites($event: Item) {
