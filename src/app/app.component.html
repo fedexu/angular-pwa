@@ -4,11 +4,9 @@
     </div>
     <div class="shadow-boxed"></div>
 </div>
-<div [@fadeAnimation]="animation(outlet)">
+<div class="grid-container">
     <div class="main-item">
-        <div class="grid-container">
-            <router-outlet #outlet="outlet"></router-outlet>
-        </div>
+            <router-outlet ></router-outlet>
     </div>
-    <loader></loader>
 </div>
+<loader></loader>
