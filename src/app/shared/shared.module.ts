@@ -26,7 +26,8 @@ import { BottomUpPageContainerComponent } from './bottom-up-page-container/botto
     CardComponent,
     InfiniteScrollComponent,
     LoaderComponent,
-    InfiniteScrollGridItemComponent
+    InfiniteScrollGridItemComponent,
+    BottomUpPageContainerComponent
   ]
 })
 export class SharedModule { }

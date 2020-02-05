@@ -26,6 +26,8 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
   rowHeight = '0vh';
   showPage = false;
 
+  toogleContainer = false;
+
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(
@@ -60,7 +62,6 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.ngUnsubscribe.complete();
   }
 
-
   fetchData() {
     this.homeApiService.getData().pipe(takeUntil(this.ngUnsubscribe)).subscribe((data: Array<Item>) => {
       this.items = [...this.items, ...data];
@@ -74,6 +75,10 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
     if (Boolean(this.showPage)) {
       this.fetchData();
     }
+  }
+  
+  toogleDetail($event: Item){
+    this.toogleContainer = true;
   }
 
   addToFavorites($event: Item) {

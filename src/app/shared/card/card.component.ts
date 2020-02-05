@@ -14,6 +14,7 @@ export class CardComponent implements OnInit {
 
   @Input() item: Item;
   @Output() iconClicked = new EventEmitter();
+  @Output() readMore = new EventEmitter();
 
   animationEnds;
 
@@ -26,4 +27,7 @@ export class CardComponent implements OnInit {
     this.iconClicked.emit(this.item);
   }
 
+  onReadMore(){
+    this.readMore.emit(this.item);
+  }
 }

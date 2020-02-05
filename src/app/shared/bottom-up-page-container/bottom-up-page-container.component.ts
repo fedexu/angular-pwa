@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
+import { slideInUpOnEnterAnimation, slideOutDownOnLeaveAnimation } from 'animation-lib';
 
 @Component({
-  selector: 'app-bottom-up-page-container',
+  selector: 'bottom-up-page-container',
   templateUrl: './bottom-up-page-container.component.html',
-  styleUrls: ['./bottom-up-page-container.component.css']
+  styleUrls: ['./bottom-up-page-container.component.css'],
+  animations: [
+    slideInUpOnEnterAnimation(),
+    slideOutDownOnLeaveAnimation(),
+  ]
 })
 export class BottomUpPageContainerComponent implements OnInit {
 
+  @Output() close = new EventEmitter();
+  closeContainer = false;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  clseContainer() {
+    if (Boolean(this.closeContainer)) {
+      this.close.emit()
+    }
   }
 
 }

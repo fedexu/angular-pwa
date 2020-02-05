@@ -3,11 +3,15 @@
     <ng-container *ngFor="let item of items; index as i">
         <infinite-scroll-grid-item>
             <div *ngIf=" (i%2 == 0)? true : false" [@slideInRightOnEnter] style="height: 100%;">
-                <card [item]="item" (iconClicked)="addToFavorites($event)"></card>
+                <card [item]="item" (iconClicked)="addToFavorites($event)" (readMore)="toogleDetail($event)"></card>
             </div>
             <div *ngIf=" (i%2 != 0)? true : false" [@slideInLeftOnEnter] style="height: 100%;">
-                <card [item]="item" (iconClicked)="addToFavorites($event)"></card>
+                <card [item]="item" (iconClicked)="addToFavorites($event)" (readMore)="toogleDetail($event)"></card>
             </div>
         </infinite-scroll-grid-item>
     </ng-container>
 </infinite-scroll>
+
+<ng-container *ngIf="toogleContainer">
+    <bottom-up-page-container (close)="toogleContainer = false"></bottom-up-page-container>
+</ng-container>
