@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 export interface LoaderState {
   show: boolean;
   error: boolean;
+  message: string;
 }
 
 @Injectable({
@@ -24,7 +25,7 @@ export class LoaderService {
     this.loaderSubject.next(<LoaderState>{ show: false });
   }
 
-  error() {
-    this.loaderSubject.next(<LoaderState>{ error: true });
+  error(message) {
+    this.loaderSubject.next(<LoaderState>{ error: true , message: message});
   }
 }

@@ -19,14 +19,14 @@ export class LoaderComponent implements OnInit, AfterViewInit {
 
   private subscription: Subscription;
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(private readonly loaderService: LoaderService) { }
 
   ngOnInit() {
     this.subscription = this.loaderService.loaderState
       .subscribe((state: LoaderState) => {
         this.show = state.show;
         if (state.error) {
-          this.noInternetToast.MaterialSnackbar.showSnackbar({ message: '¯\_(ツ)_/¯ No internet connection!' });
+          this.noInternetToast.MaterialSnackbar.showSnackbar({ message: state.message});
         }
       });
   }

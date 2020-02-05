@@ -9,7 +9,7 @@ import { tap, finalize } from 'rxjs/operators';
 })
 export class LoaderInterceptorService implements HttpInterceptor {
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(private readonly loaderService: LoaderService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.showLoader();
@@ -22,7 +22,7 @@ export class LoaderInterceptorService implements HttpInterceptor {
       },
         (err: any) => {
           this.onEnd();
-          this.showConnectionError();
+          this.showConnectionError('¯\\_(ツ)_/¯ No internet connection!');
         }),
       finalize(() => {
         this.onEnd();
@@ -38,7 +38,7 @@ export class LoaderInterceptorService implements HttpInterceptor {
   private hideLoader(): void {
     this.loaderService.hide();
   }
-  private showConnectionError() {
-    this.loaderService.error();
+  private showConnectionError(message:string) {
+    this.loaderService.error(message);
   }
 }
