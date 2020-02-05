@@ -2,14 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Item, FavoritesDataService } from 'src/app/shared/services/favorites-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { fadeOutAnimation } from 'animation-lib';
+import { fadeOutAnimation, fadeInOnEnterAnimation } from 'animation-lib';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   animations: [
-    fadeOutAnimation()
+    fadeOutAnimation(), 
+    fadeInOnEnterAnimation(),
   ]
 })
 export class DashboardComponent implements OnInit, OnDestroy {

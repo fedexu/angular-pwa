@@ -1,5 +1,6 @@
 .demo-card-wide.mdl-card {
     width: 100%;
+    border-radius: 15px;
 }
 
 .demo-card-wide>.mdl-card__title {

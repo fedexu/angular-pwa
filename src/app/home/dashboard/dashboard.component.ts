@@ -3,11 +3,21 @@ import { HomeApiService } from '../home-api.service';
 import { Item, FavoritesDataService } from 'src/app/shared/services/favorites-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { 
+  fadeInOnEnterAnimation, 
+  slideInLeftOnEnterAnimation, 
+  slideInRightOnEnterAnimation 
+} from 'animation-lib';
 
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  animations: [
+    fadeInOnEnterAnimation(),
+    slideInLeftOnEnterAnimation({ duration: 500 }),
+    slideInRightOnEnterAnimation({ duration: 500 })
+  ]
 })
 export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 

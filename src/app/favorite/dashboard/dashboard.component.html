@@ -1,7 +1,7 @@
 <infinite-scroll class="scrollBarLayout" [rowHeight]="rowHeight" [colNum]="colNum" [gap]="'1em'"
     [elementsNumber]="items.length">
-    <div *ngFor="let item of items" [@fadeOut]="!item.favorite ? true : false"
-        (@fadeOut.done)="removeToFavorites(item)" style="height: 100%;">
+    <div *ngFor="let item of items" [@fadeOut]="!item.favorite ? true : false" (@fadeOut.done)="removeToFavorites(item)"
+        style="height: 100%;" [@fadeInOnEnter]>
         <infinite-scroll-grid-item>
             <card [item]="item"></card>
         </infinite-scroll-grid-item>
