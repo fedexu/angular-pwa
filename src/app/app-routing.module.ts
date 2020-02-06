@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BottomUpPageContainerComponent } from './shared/bottom-up-page-container/bottom-up-page-container.component';
 
 
 const routes: Routes = [
   { path:'', loadChildren: './home/home.module#HomeModule'},
-  { path:'favorite', loadChildren: './favorite/favorite.module#FavoriteModule' , data: {animation: 'FavoritesPage'}},
-  { path:'bottom-up-Page',component: BottomUpPageContainerComponent}
+  { path:'favorite', loadChildren: './favorite/favorite.module#FavoriteModule'}, 
+  { path:'options', loadChildren: './options/options.module#OptionsModule'}, 
+
 ];
 
 @NgModule({

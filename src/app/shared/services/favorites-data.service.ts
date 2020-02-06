@@ -14,16 +14,10 @@ export class FavoritesDataService {
 
   constructor(
     private readonly localStorage: LocalStorage
-  ) {
-    this.localStorage.getItem(this.dbEntity).subscribe((articles: Array<Item>) => {
-      if (Boolean(articles)) {
-        this.items = articles;
-      }
-      this.eventItems.next(this.items);
-    })
-  }
+  ) {  }
 
   getItems(): ReplaySubject<Array<Item>> {
+    this.readStorage();
     return this.eventItems;
   }
 
@@ -58,6 +52,17 @@ export class FavoritesDataService {
     this.localStorage.setItem(this.dbEntity, this.items).subscribe(() => {
       this.eventItems.next(this.items);
     });
+  }
+
+  readStorage() {
+    this.localStorage.getItem(this.dbEntity).subscribe((articles: Array<Item>) => {
+      if (Boolean(articles)) {
+        this.items = articles;
+      }else {
+        this.items = new Array<Item>();
+      }
+      this.eventItems.next(this.items);
+    })
   }
 
 }

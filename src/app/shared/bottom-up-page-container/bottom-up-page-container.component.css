@@ -48,7 +48,7 @@
 .clip-wrap {
     grid-column: first / fourth;
     grid-row: second / third;
-    filter: drop-shadow(1px -3px 4px rgba(50, 50, 0, 0.5))
+    filter: drop-shadow(1px -3px 4px #32320080)
 }
 
 .bottom-up-page-content >>> pre  {

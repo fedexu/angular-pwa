@@ -1,0 +1,35 @@
+<div [@fadeInOnEnter]>
+    <div class="features-grid">
+        <div class="danger-area-text"><strong>Danger Area</strong></div>
+        <div class="danger-area">
+            <div class="danger-area-grid">
+                <div class="erase-data" *ngIf="!eraseData && !erased" [@fadeOutOnLeave] [@fadeIn]>
+                    <button class="mdl-button mdl-js-button mdl-button--accent erase-data-ff3446 erase-data-button"
+                        (click)="eraseData = true">
+                        Delete
+                    </button>
+                </div>
+                <div class="erase-data-text" *ngIf="!eraseData && !erased" [@fadeOutOnLeave] [@fadeIn]>
+                    <strong>Delete the data of the application</strong>
+                    <p>you delete the data, there is no going back</p>
+                </div>
+
+                <div class="erase-data-text-security" *ngIf="eraseData && !erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
+                    <strong>Are you sure ?</strong>
+                </div>
+                <div class="erase-data-security" *ngIf="eraseData && !erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
+                    <button class="mdl-button mdl-js-button mdl-button--accent erase-data-ff3446 erase-data-button"
+                        (click)="deleteLocalStorage()">
+                        Yes
+                    </button>
+                    <button class="mdl-button mdl-js-button mdl-button erase-data-button" (click)="eraseData = false">
+                        No
+                    </button>
+                </div>
+                <div class="data-deleted" *ngIf="erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
+                    <strong>Data deleted</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
