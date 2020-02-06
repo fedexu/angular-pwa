@@ -1,15 +1,14 @@
 <div *ngIf="!closeContainer" class="bottom-up-page-container" [@slideInUpOnEnter] [@slideOutDownOnLeave]
     (@slideOutDownOnLeave.done)="clseContainer()">
-    <div class="layout-left">
-        <div class="border-left"></div>
+    <div class="clip-wrap ">
+        <div class="transparent-clip">
+        </div>
     </div>
-    <div id="hole" class="close-icon-button">
-        <button (click)="closeContainer = true" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" style="margin-bottom: 15px;">
+    <div class="close-icon-button">
+        <button (click)="closeContainer = true" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
+            style="margin-bottom: 15px;">
             <i class="material-icons-round close-icon"> close </i>
         </button>
-    </div>
-    <div class="layout-right">
-        <div class="border-right"></div>
     </div>
     <div class="bottom-up-page-content">
         <ng-content></ng-content>
