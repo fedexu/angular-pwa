@@ -3,10 +3,10 @@ import { HomeApiService } from '../home-api.service';
 import { Item, FavoritesDataService } from 'src/app/shared/services/favorites-data.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { 
-  fadeInOnEnterAnimation, 
-  slideInLeftOnEnterAnimation, 
-  slideInRightOnEnterAnimation 
+import {
+  fadeInOnEnterAnimation,
+  slideInLeftOnEnterAnimation,
+  slideInRightOnEnterAnimation
 } from 'animation-lib';
 
 @Component({
@@ -27,6 +27,9 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
   showPage = false;
 
   toogleContainer = false;
+  innerHTML: string;
+
+  error = false;
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -68,6 +71,8 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
       this.items.forEach((item: Item) => {
         item.favorite = this.isInFavorites(item);
       })
+    }, error => {
+      this.error = true;
     });
   }
 
@@ -76,9 +81,10 @@ export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
       this.fetchData();
     }
   }
-  
-  toogleDetail($event: Item){
+
+  toogleDetail($event: Item) {
     this.toogleContainer = true;
+    this.innerHTML = $event.html;
   }
 
   addToFavorites($event: Item) {

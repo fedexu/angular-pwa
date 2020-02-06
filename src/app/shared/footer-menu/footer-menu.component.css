@@ -23,16 +23,14 @@
 .icon-grid{
     display: grid;
     grid-template-columns: [first] 33% [second] 33% [third] 33% [fourth];
-    grid-template-rows: [first] 33% [second] 33% [third] 33% [fourth];
+    grid-template-rows: [first] 20% [second] 33% [third] 47% [fourth];
     min-height: 100%;
 }
 
 .icon-center{
-    grid-column: second / third;
-    grid-row: second / third;
-    align-items: center;
-    justify-content: center;
-    display: flex;
+    grid-column: second / fourth;
+    grid-row: second / fourth;
+    font-size: 48px;
 }
 
 .mdl-js-button.mdl-js-ripple-effect { position: relative; }

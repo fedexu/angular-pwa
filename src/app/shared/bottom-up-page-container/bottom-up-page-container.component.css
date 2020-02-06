@@ -1,7 +1,7 @@
 .bottom-up-page-container {
     display: grid;
     grid-template-columns: [first] 40vw [second] 20vw [third] 40vw [fourth];
-    grid-template-rows: [first] 20vh [second] 8vh [third] auto [fourth];
+    grid-template-rows: [first] 20vh [second] 8vh [third] 72vh [fourth];
     height: 100%;
     width: 100%;
     position: absolute;
@@ -34,9 +34,11 @@
     grid-column: first / fourth;
     grid-row: third / fourth;
     background-color: #FFF;
+    z-index: 1;
+    overflow-y: scroll;
 }
 
-.transparent-clip{
+.transparent-clip {
     clip-path: ellipse(50% 95% at 50% 100%);
     background-color: #FFF;
     height: 100%;
@@ -47,4 +49,17 @@
     grid-column: first / fourth;
     grid-row: second / third;
     filter: drop-shadow(1px -3px 4px rgba(50, 50, 0, 0.5))
-  }
+}
+
+.bottom-up-page-content >>> pre  {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.bottom-up-page-content >>> table  {
+    overflow: auto;
+    display: block;
+    
+}

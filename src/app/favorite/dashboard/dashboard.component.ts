@@ -9,7 +9,7 @@ import { fadeOutAnimation, fadeInOnEnterAnimation } from 'animation-lib';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   animations: [
-    fadeOutAnimation(), 
+    fadeOutAnimation(),
     fadeInOnEnterAnimation(),
   ]
 })
@@ -18,6 +18,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
   items = new Array<Item>();
   colNum = 0;
   rowHeight = '0vh';
+
+  toogleContainer = false;
+  innerHTML: string;
 
   protected ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -57,6 +60,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
     if (!$event.favorite) {
       this.favoritesDataService.removeItem($event);
     }
+  }
+
+  toogleDetail($event: Item) {
+    this.toogleContainer = true;
+    this.innerHTML = $event.html;
   }
 
 

@@ -12,6 +12,17 @@
     </ng-container>
 </infinite-scroll>
 
+<ng-container *ngIf="error">
+    <div class="no-article">Some error occurs...</div>
+    <br>
+    <div class="no-article">(❍ᴥ❍ʋ)</div>
+
+</ng-container>
+
 <ng-container *ngIf="toogleContainer">
-    <bottom-up-page-container (close)="toogleContainer = false"></bottom-up-page-container>
+    <bottom-up-page-container (close)="toogleContainer = false">
+        <div class="description-grid">
+            <div [innerHTML]="innerHTML" class="content"></div>
+        </div>
+    </bottom-up-page-container>
 </ng-container>
