@@ -12,20 +12,20 @@ export interface LoaderState {
 })
 export class LoaderService {
 
-  private loaderSubject = new Subject<LoaderState>();
+  private readonly loaderSubject = new Subject<LoaderState>();
   loaderState = this.loaderSubject.asObservable();
 
   constructor() { }
 
   show() {
-    this.loaderSubject.next(<LoaderState>{ show: true });
+    this.loaderSubject.next({ show: true } as LoaderState);
   }
 
   hide() {
-    this.loaderSubject.next(<LoaderState>{ show: false });
+    this.loaderSubject.next({ show: false } as LoaderState);
   }
 
   error(message) {
-    this.loaderSubject.next(<LoaderState>{ error: true , message: message});
+    this.loaderSubject.next({ error: true, message: message } as LoaderState);
   }
 }

@@ -8,9 +8,9 @@ import { LocalStorage } from '@ngx-pwa/local-storage';
 export class FavoritesDataService {
 
   private items = new Array<Item>();
-  private dbEntity = 'articles';
+  private readonly dbEntity = 'articles';
 
-  private eventItems: ReplaySubject<Array<Item>> = new ReplaySubject(1);
+  private readonly eventItems: ReplaySubject<Array<Item>> = new ReplaySubject(1);
 
   constructor(
     private readonly localStorage: LocalStorage
@@ -28,7 +28,7 @@ export class FavoritesDataService {
   }
 
   addItem(item: Item) {
-    let itemCopy = { ...item };
+    const itemCopy = { ...item };
     this.items.push({ ...itemCopy, favorite: true });
     this.alignStorage();
   }
@@ -41,7 +41,7 @@ export class FavoritesDataService {
   }
 
   isInFavorites(item: Item): boolean {
-    let find = this.items.find((it: Item) => {
+    const find = this.items.find((it: Item) => {
       return it.url === item.url;
     });
     return (Boolean(find)) ? true : false;

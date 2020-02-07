@@ -13,19 +13,19 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly pwaService: PwaService,
-    private router: Router) { }
+    private readonly router: Router) { }
 
   ngOnInit() { }
 
   onSwipeLeft($event) {
-    let routeIndex = this.routeStep.indexOf(this.router.url);
+    const routeIndex = this.routeStep.indexOf(this.router.url);
     if ( routeIndex !== -1 && routeIndex !== 0 ){
       this.router.navigate([this.routeStep[routeIndex -1]]);
     }
   }
 
   onSwipeRight($event) {
-    let routeIndex = this.routeStep.indexOf(this.router.url);
+    const routeIndex = this.routeStep.indexOf(this.router.url);
     if ( routeIndex !== -1 && routeIndex !== this.routeStep.length ){
       this.router.navigate([this.routeStep[routeIndex + 1]]);
     }

@@ -20,11 +20,11 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy, AfterViewInit
 
   crypto = window.crypto;
   array = new Uint32Array(1);
-  id = 'infinite_scroll_grid_' + this.crypto.getRandomValues(this.array);
+  id = `infinite_scroll_grid_${this.crypto.getRandomValues(this.array)}`;
   infiniteGridElement;
   elemntComputed;
 
-  constructor(private host: ElementRef) { }
+  constructor(private readonly host: ElementRef) { }
 
   get element() {
     return this.host.nativeElement;
@@ -82,16 +82,16 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   updateVar() {
-    let colNum = parseInt(this.elemntComputed.getPropertyValue("--colNum"));
-    this.infiniteGridElement.style.setProperty(`--rowNum`, Math.ceil(this.elementsNumber / colNum) + "");
+    const colNum = parseInt(this.elemntComputed.getPropertyValue("--colNum"));
+    this.infiniteGridElement.style.setProperty(`--rowNum`, `${Math.ceil(this.elementsNumber / colNum)}`);
   }
 
   changeCol(action) {
-    let colNum = parseInt(this.elemntComputed.getPropertyValue("--colNum"));
-    if (action == 'add') {
-      this.infiniteGridElement.style.setProperty(`--colNum`, colNum + 1 + "");
+    const colNum = parseInt(this.elemntComputed.getPropertyValue("--colNum"));
+    if (action === 'add') {
+      this.infiniteGridElement.style.setProperty(`--colNum`, `${colNum + 1}`);
     } else {
-      this.infiniteGridElement.style.setProperty(`--colNum`, colNum - 1 + "");
+      this.infiniteGridElement.style.setProperty(`--colNum`, `${colNum - 1}`);
     }
     this.updateVar();
   }
