@@ -23,4 +23,22 @@ $ npm start
 
 To test the app run it on <a href="https://fedexu.github.io/angular-pwa/">here</a>! 
 
+## Sonar Qube! 
 
+This project is configured with <a href="https://sonarcloud.io"> Sonar Cube </a>!  
+
+You can find the application dashbaord <a href="https://sonarcloud.io/dashboard?id=fedexu_angular-pwa"> here</a>.
+
+
+## PWA 
+
+<article name="pwa-description">
+<h3>What is this?</h3>
+<p>This is a PWA. <a target="_blank" rel="noopener noreferrer" href="https://developers.google.com/web/progressive-web-apps">Here</a> you can find
+    everything on this technology.</p>
+<p>On with technology is created ? With <a target="_blank" rel="noopener noreferrer" href="https://angular.io/">Angular !</a></p>
+<p>A PWA can take the experience from the web to all the devices and seems a native Appwith with the
+    same code base!</p>
+<p>Have fun with this little POC (proof of concept) that is created with the purpose to show you the
+    possibility of the technology.</p>
+</article>
