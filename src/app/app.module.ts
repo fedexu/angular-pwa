@@ -1,4 +1,4 @@
-import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,9 +10,9 @@ import { environment } from '../environments/environment';
 import { StorageModule } from '@ngx-pwa/local-storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-export class HammerConfig extends HammerGestureConfig {
-  overrides = <any>{};
-}
+// export class HammerConfig extends HammerGestureConfig {
+//   overrides = <any>{};
+// }
 @NgModule({
   declarations: [
     AppComponent
@@ -30,10 +30,6 @@ export class HammerConfig extends HammerGestureConfig {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptorService,
       multi: true
-    },
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: HammerConfig
     }
   ],
   bootstrap: [AppComponent]
