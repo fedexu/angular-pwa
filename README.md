@@ -2,7 +2,7 @@
   <a target="blank"><img src="https://angular.io/assets/images/logos/angular/angular_solidBlack.png" width="320" alt="Angular Logo" /></a>
 </p>
 
-[![sonar qube](https://sonarcloud.io/api/project_badges/measure?project=fedexu_angular-pwa&metric=alert_status)](https://sonarcloud.io)
+[![sonar qube](https://sonarcloud.io/api/project_badges/measure?project=fedexu_angular-pwa&metric=alert_status)](https://sonarcloud.io/dashboard?id=fedexu_angular-pwa)
 
 ## Description
 
