@@ -1,7 +1,6 @@
 <div [@fadeInOnEnter]>
-    <div class="features-grid">
-        <div class="section-pwa-description"></div>
-        <div class="pwa-description">
+    <div class="features-grid scrollBarLayout">
+        <div class="contains">
             <article name="pwa-description">
                 <h3>What is this?</h3>
                 <p>This is a PWA. <a href="https://developers.google.com/web/progressive-web-apps">Here</a> you can find
@@ -13,10 +12,7 @@
                     possibility of the technology.</p>
             </article>
         </div>
-        <div class="section-danger-zone"></div>
-
-
-        <article class="danger-area">
+        <article class="contains section-danger-zone ">
             <h3>Danger Area</h3>
             <div class="danger-area-grid">
                 <div class="erase-data" *ngIf="!eraseData && !erased" [@fadeOutOnLeave] [@fadeIn]>

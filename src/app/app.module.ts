@@ -9,15 +9,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { StorageModule } from '@ngx-pwa/local-storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import * as hammer from "hammerjs";
 
-export class MyHammerConfig extends HammerGestureConfig {
-  overrides = <any>{
-    swipe: { direction: hammer.DIRECTION_HORIZONTAL },
-    pinch: { enable: false },
-    rotate: { enable: false },
-
-  };
+export class HammerConfig extends HammerGestureConfig {
+  overrides = <any>{};
 }
 @NgModule({
   declarations: [
@@ -39,7 +33,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     },
     {
       provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig
+      useClass: HammerConfig
     }
   ],
   bootstrap: [AppComponent]

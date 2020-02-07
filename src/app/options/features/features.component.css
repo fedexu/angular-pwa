@@ -1,35 +1,20 @@
 .features-grid {
     display: grid;
-    grid-template-columns: [first] 5vw [second] 90vw [third] 5vw [fourth];
-    grid-template-rows: [first] auto [second] 4vh [third] 18vh [fourth] ;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5,auto);
+    max-height: 90vh;
+    min-height: 90vh;
+    overflow-y: scroll;
+    position: relative;
 }
 
-.pwa-description {
-    grid-column: second / third;
-    grid-row: first / second;
-}
-
-.section-pwa-description {
-    grid-column: first / -1;
-    grid-row: first / second;
-    background-color: #FFF;
+.contains{
+    padding: 0px 10vw 0px 10vw;
 }
 
 .section-danger-zone {
-    grid-column: first / -1;
-    grid-row: second / fourth;
     background-color: #ffb3b3cb;
-}
-
-.danger-area-text {
-    grid-column: second / third;
-    grid-row: second / third;
-    padding-top: 10px;
-}
-
-.danger-area {
-    grid-column: second / third;
-    grid-row: second / fourth;
+    min-height: 20vh;
 }
 
 .danger-area-grid {
@@ -85,6 +70,22 @@
     grid-row: first / second;
     margin-top: 18px;
     text-align: center;
+}
+
+.scrollBarLayout::-webkit-scrollbar {
+    /* width: 0.4em; */
+    width: 0em;
+    border-radius: 1em;
+}
+
+.scrollBarLayout::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.scrollBarLayout::-webkit-scrollbar-thumb {
+    /* slim scroll bar */
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
 
 @media only screen and (min-width: 768px) {
