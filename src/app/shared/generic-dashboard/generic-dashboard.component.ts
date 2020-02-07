@@ -65,7 +65,7 @@ export class GenericDashboard implements OnDestroy {
 
     toogleDetail($event: Item) {
         this.toogleContainer = true;
-        this.innerHTML = $event.html.replace(/<a\s+href=/gi, '<a target="_blank" href=');
+        this.innerHTML = $event.html.replace(/<a\s+href=/gi, '<a target="_blank" rel="noopener noreferrer" href=');
     }
 
     addToFavorites($event: Item) {
