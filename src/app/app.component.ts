@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PwaService } from './pwa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,26 @@ import { PwaService } from './pwa.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private readonly pwaService: PwaService) { }
+  routeStep = ['/favorite', '/', '/options'];
+
+  constructor(
+    private readonly pwaService: PwaService,
+    private router: Router) { }
 
   ngOnInit() { }
 
+  onSwipeLeft($event) {
+    let routeIndex = this.routeStep.indexOf(this.router.url);
+    if ( routeIndex !== -1 && routeIndex !== 0 ){
+      this.router.navigate([this.routeStep[routeIndex -1]]);
+    }
+  }
+
+  onSwipeRight($event) {
+    let routeIndex = this.routeStep.indexOf(this.router.url);
+    if ( routeIndex !== -1 && routeIndex !== this.routeStep.length ){
+      this.router.navigate([this.routeStep[routeIndex + 1]]);
+    }
+  }
 
 }

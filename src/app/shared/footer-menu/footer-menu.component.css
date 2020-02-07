@@ -23,7 +23,7 @@
 .icon-grid{
     display: grid;
     grid-template-columns: [first] 40% [second] 33% [third] 27% [fourth];
-    grid-template-rows: [first] 30% [second] 33% [third] 47% [fourth];
+    grid-template-rows: [first] 30% [second] 33% [third] 37% [fourth];
     min-height: 100%;
 }
 

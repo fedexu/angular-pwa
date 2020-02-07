@@ -1,7 +1,7 @@
 .features-grid {
     display: grid;
     grid-template-columns: [first] 5vw [second] 90vw [third] 5vw [fourth];
-    grid-template-rows: [first] auto [second] 4vh [third] 10vh [fourth] auto [fifth] auto [sixth] auto [seventh];
+    grid-template-rows: [first] auto [second] 4vh [third] 18vh [fourth] ;
 }
 
 .pwa-description {
@@ -29,15 +29,13 @@
 
 .danger-area {
     grid-column: second / third;
-    grid-row: third / fourth;
+    grid-row: second / fourth;
 }
 
 .danger-area-grid {
     display: grid;
     grid-template-columns: [first] 2vw [second] 25vw [third] 25vw [fourth] auto [fifth];
     grid-template-rows: [first] auto [second];
-    max-height: 100%;
-    min-height: 100%;
 }
 
 .erase-data {
