@@ -18,13 +18,6 @@
     padding: 1em;
 }
 
-.no-article {
-    font-size: 1.5em;
-    text-align: center;
-    position: relative;
-    top: 25vh;
-}
-
 .description-grid {
     display: grid;
     grid-template-columns: [first] 5vw [second] 90vw [third] 5vw [fourth];

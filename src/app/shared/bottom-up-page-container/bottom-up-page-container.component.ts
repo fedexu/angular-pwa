@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnChanges, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { slideInUpOnEnterAnimation, slideOutDownOnLeaveAnimation } from 'animation-lib';
 
 @Component({

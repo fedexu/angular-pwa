@@ -14,7 +14,7 @@ export class FavoritesDataService {
 
   constructor(
     private readonly localStorage: LocalStorage
-  ) {  }
+  ) { }
 
   getItems(): ReplaySubject<Array<Item>> {
     this.readStorage();
@@ -22,7 +22,6 @@ export class FavoritesDataService {
   }
 
   addItems(items: Array<Item>) {
-    let itemsCopy = [...items];
     items.forEach((item: Item) => {
       this.addItem(item);
     });
@@ -58,7 +57,7 @@ export class FavoritesDataService {
     this.localStorage.getItem(this.dbEntity).subscribe((articles: Array<Item>) => {
       if (Boolean(articles)) {
         this.items = articles;
-      }else {
+      } else {
         this.items = new Array<Item>();
       }
       this.eventItems.next(this.items);

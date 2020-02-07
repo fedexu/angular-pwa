@@ -14,11 +14,11 @@
         <div class="mdl-card__menu">
             <button [@slideOutUp]="item.favorite" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"
                 style="position: absolute;">
-                <i *ngIf="item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite</i>
+                <em *ngIf="item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite</em>
             </button>
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" (click)="onIconClick()">
-                <i *ngIf="!item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite_border </i>
-                <i *ngIf="item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite</i>
+                <em *ngIf="!item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite_border </em>
+                <em *ngIf="item.favorite" class="material-icons-round heart-icon-ff2e2e">favorite</em>
             </button>
         </div>
     </div>

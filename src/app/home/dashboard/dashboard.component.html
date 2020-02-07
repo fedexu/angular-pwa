@@ -1,7 +1,7 @@
-<infinite-scroll class="scrollBarLayout" (scrolled)="onReachEnd()" [rowHeight]="rowHeight" [colNum]="colNum"
+<infinite-scroll id="infinite-scroll" class="scrollBarLayout" (scrolled)="onReachEnd()" [rowHeight]="rowHeight" [colNum]="colNum"
     [gap]="'1em'" [elementsNumber]="items.length">
     <ng-container *ngFor="let item of items; index as i">
-        <infinite-scroll-grid-item>
+        <infinite-scroll-grid-item id="infinite-scroll-grid-item">
             <div *ngIf=" (i%2 == 0)? true : false" [@slideInRightOnEnter] style="height: 100%;">
                 <card [item]="item" (iconClicked)="addToFavorites($event)" (readMore)="toogleDetail($event)"></card>
             </div>

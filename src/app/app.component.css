@@ -14,7 +14,7 @@
     grid-row: first / second;
 }
 
-.main-item >>> infinite-scroll {
+.main-item >>> #infinite-scroll {
     max-height: 90vh;
     max-width: 100vw;
     overflow-y: scroll;
@@ -59,7 +59,7 @@
         grid-row: second / third;
     }
 
-    .main-item >>> infinite-scroll {
+    .main-item >>> #infinite-scroll {
         max-height: 94vh;
         max-width: 100vw;
         overflow-y: scroll;
@@ -68,7 +68,7 @@
 
     .menu-grid{
         display: grid;
-        grid-template-columns: [first] 15vw [second] 15vw [third] 15vw [fourth] auto [fifth];;
+        grid-template-columns: [first] 15vw [second] 15vw [third] 15vw [fourth] auto [fifth];
         grid-template-rows: [first] 8vh  [second] auto [third];
         position: absolute;
         min-width: 100%;

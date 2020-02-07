@@ -18,7 +18,9 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy, AfterViewInit
 
   private observer: IntersectionObserver;
 
-  id = 'infinite_scroll_grid_' + Math.random();
+  crypto = window.crypto;
+  array = new Uint32Array(1);
+  id = 'infinite_scroll_grid_' + this.crypto.getRandomValues(this.array);
   infiniteGridElement;
   elemntComputed;
 
@@ -80,7 +82,6 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy, AfterViewInit
   }
 
   updateVar() {
-    let rowNum = parseInt(this.elemntComputed.getPropertyValue("--rowNum"));
     let colNum = parseInt(this.elemntComputed.getPropertyValue("--colNum"));
     this.infiniteGridElement.style.setProperty(`--rowNum`, Math.ceil(this.elementsNumber / colNum) + "");
   }
