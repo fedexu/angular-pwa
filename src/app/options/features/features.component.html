@@ -1,5 +1,19 @@
 <div [@fadeInOnEnter]>
     <div class="features-grid">
+        <div class="section-pwa-description"></div>
+        <div class="pwa-description">
+            <article name="pwa-description">
+                <h3>What is this?</h3>
+                <p>This is a PWA. <a href="https://developers.google.com/web/progressive-web-apps">Here</a> you can find
+                    everything on this technology.</p>
+                <p>On with technology is created ? With <a href="https://angular.io/">Angular !</a></p>
+                <p>A PWA can take the experience from the web to all the devices and seems a native Appwith with the
+                    same code base!</p>
+                <p>Have fun with this little POC (proof of concept) that is created with the purpose to show you the
+                    possibility of the technology.</p>
+            </article>
+        </div>
+        <div class="section-danger-zone"></div>
         <div class="danger-area-text"><strong>Danger Area</strong></div>
         <div class="danger-area">
             <div class="danger-area-grid">
@@ -12,10 +26,12 @@
                 <div class="erase-data-text" *ngIf="!eraseData && !erased" [@fadeOutOnLeave] [@fadeIn]>
                     <strong>Delete the data of the application</strong>
                     <p>you delete the data, there is no going back</p>
+                    <br>
                 </div>
 
                 <div class="erase-data-text-security" *ngIf="eraseData && !erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
                     <strong>Are you sure ?</strong>
+                    <br>
                 </div>
                 <div class="erase-data-security" *ngIf="eraseData && !erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
                     <button class="mdl-button mdl-js-button mdl-button--accent erase-data-ff3446 erase-data-button"
@@ -28,7 +44,9 @@
                 </div>
                 <div class="data-deleted" *ngIf="erased" [@fadeOutOnLeave] [@fadeInOnEnter]>
                     <strong>Data deleted</strong>
+                    <br>
                 </div>
+
             </div>
         </div>
     </div>
