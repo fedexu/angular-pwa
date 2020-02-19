@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build-prod": "ng build --prod --output-path dist",
     "publish-github": "ng build --prod --output-path docs --base-href /angular-pwa/",
     "test-pwa": "ng build --prod --output-path angular-pwa/ --base-href /angular-pwa/ && http-server -p 4000 -o -c-1 "
   },
