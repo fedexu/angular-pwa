@@ -7,14 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class HomeApiService {
 
-  private readonly dataURL = "https://www.techiediaries.com/api/data.json";
+  private readonly dataURL = "http://localhost:9999/articles";
 
   constructor(
     private readonly http: HttpClient
   ) { }
 
-  getData(): Observable<any> {
-    return this.http.get(this.dataURL);
+  getData(fetchPage): Observable<any> {
+    return this.http.get(this.dataURL + '?page=' + fetchPage);
   }
 
 }

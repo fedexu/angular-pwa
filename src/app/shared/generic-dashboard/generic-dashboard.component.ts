@@ -9,6 +9,7 @@ export class GenericDashboard implements OnDestroy {
     items = new Array<Item>();
     colNum = 1;
     rowHeight = '0vh';
+    currentFetchPage = 0;
 
     toogleContainer = false;
     innerHTML: string;
@@ -46,12 +47,13 @@ export class GenericDashboard implements OnDestroy {
         this.ngUnsubscribe.complete();
     }
 
-    fetchData() {
-        this.homeApiServices.getData().pipe(takeUntil(this.ngUnsubscribe)).subscribe((data: Array<Item>) => {
-            this.items = [...this.items, ...data];
+    fetchData(currentFetchPage: number) {
+        this.homeApiServices.getData(currentFetchPage).pipe(takeUntil(this.ngUnsubscribe)).subscribe((data: any) => {
+            this.items = [...this.items, ...data.content];
             this.items.forEach((item: Item) => {
                 item.favorite = this.isInFavorites(item);
-            })
+            });
+            this.currentFetchPage += 1;
         }, error => {
             this.error = true;
         });
@@ -59,7 +61,7 @@ export class GenericDashboard implements OnDestroy {
 
     onReachEnd() {
         if (Boolean(this.showPage)) {
-            this.fetchData();
+            this.fetchData(this.currentFetchPage + 1);
         }
     }
 
