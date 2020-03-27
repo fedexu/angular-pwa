@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PwaService } from './pwa.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from './guards/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,17 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly pwaService: PwaService,
-    private readonly router: Router) { }
+    private readonly router: Router,
+    private readonly authenticationService: AuthenticationService) { 
+      this.login();
+    }
+  
+    //TODO remove from here! need to implements a login form
+    login() {
+      const credential = { "username": "dummy", "password": "dummy" };
+      this.authenticationService.login(credential.username, credential.password);
+    }
+    
 
   ngOnInit() { }
 

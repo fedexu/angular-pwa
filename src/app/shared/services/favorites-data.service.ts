@@ -61,7 +61,7 @@ export class FavoritesDataService {
         this.items = new Array<Item>();
       }
       this.eventItems.next(this.items);
-    })
+    });
   }
 
 }

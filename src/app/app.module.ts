@@ -9,6 +9,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { StorageModule } from '@ngx-pwa/local-storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JwtInterceptor } from './shared/authentication/jwt.interceptor';
 
 // export class HammerConfig extends HammerGestureConfig {
 //   overrides = <any>{};
@@ -29,6 +30,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderInterceptorService,
+      multi: true
+    }, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
       multi: true
     }
   ],
