@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeApiService {
 
-  private readonly dataURL = "https://www.techiediaries.com/api/data.json";
+  private readonly dataURL = "/assets/data.json";
 
   constructor(
     private readonly http: HttpClient
