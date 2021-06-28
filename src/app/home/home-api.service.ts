@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeApiService {
 
-  private readonly dataURL = "/assets/data.json";
+  private readonly dataURL = "/angular-pwa/assets/data.json";
 
   constructor(
     private readonly http: HttpClient
